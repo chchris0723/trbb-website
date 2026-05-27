@@ -1,0 +1,23 @@
+{
+  "name": "trbb-admin",
+  "version": "1.0.0",
+  "description": "TRBB 鐵人三項運動社團 - Admin Backend",
+  "private": true,
+  "scripts": {
+    "dev": "vite --port 3002 --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.0",
+    "vue-router": "^4.3.0",
+    "dayjs": "^1.11.10",
+    "echarts": "^5.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.10"
+  }
+}

@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;900&family=Barlow+Condensed:wght@400;600;700&display=swap');
+
+/* ── CSS Variables ──────────────────────────────────────── */
+:root {
+  --color-bg:        #000000;
+  --color-bg-2:      #0a0a0a;
+  --color-bg-card:   #111111;
+  --color-bg-hover:  #1a1a1a;
+  --color-border:    #222222;
+  --color-primary:   #e5191a;   /* TRBB Red */
+  --color-primary-d: #b81415;
+  --color-white:     #ffffff;
+  --color-gray-1:    #cccccc;
+  --color-gray-2:    #888888;
+  --color-gray-3:    #444444;
+  --font-display:    'Bebas Neue', sans-serif;
+  --font-body:       'Barlow', sans-serif;
+  --font-cond:       'Barlow Condensed', sans-serif;
+  --radius:          4px;
+  --transition:      0.2s ease;
+}
+
+/* ── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--color-primary); }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, select, textarea {
+  font-family: inherit;
+  background: var(--color-bg-card);
+  color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.9rem;
+  transition: border-color var(--transition);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+.trbb-logo {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+.trbb-logo .tr { color: var(--color-white); }
+.trbb-logo .bb { color: var(--color-primary); }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.8rem;
+  font-family: var(--font-cond);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.btn-primary:hover { background: var(--color-primary-d); color: var(--color-white); }
+.btn-outline {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.btn-outline:hover { background: var(--color-primary); color: var(--color-white); }
+.btn-ghost {
+  border: 1px solid var(--color-border);
+  color: var(--color-gray-1);
+}
+.btn-ghost:hover { border-color: var(--color-white); color: var(--color-white); }
+
+/* ── Cards ───────────────────────────────────────────────── */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.card:hover { border-color: var(--color-primary); transform: translateY(-2px); }
+
+/* ── Container ───────────────────────────────────────────── */
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ── Utility ─────────────────────────────────────────────── */
+.text-red   { color: var(--color-primary); }
+.text-gray  { color: var(--color-gray-2); }
+.text-sm    { font-size: 0.875rem; }
+.text-xs    { font-size: 0.75rem; }
+.uppercase  { text-transform: uppercase; }
+.fw-700     { font-weight: 700; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-4 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 1rem; }
+.gap-2 { gap: 1rem; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.grid { display: grid; }
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-bg-2); }
+::-webkit-scrollbar-thumb { background: var(--color-gray-3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.fade-in { animation: fadeIn 0.4s ease forwards; }
+
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(229, 25, 26, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(229, 25, 26, 0); }
+}
+.pulse-red { animation: pulse-red 2s infinite; }
+
+/* ── Red accent line ─────────────────────────────────────── */
+.section-title {
+  position: relative;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 48px; height: 3px;
+  background: var(--color-primary);
+}
